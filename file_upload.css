@@ -1,0 +1,23 @@
+/* CSS declarations go here */
+
+body {
+  background: url('pattern_130.gif');
+}
+
+.panel {
+  width: 100%;
+  position: relative;
+  background: #fff;
+  margin-top: 50px;
+  box-shadow: 0 0 10px rgba(0,0,0,.5);
+}
+
+h3{
+  text-align: center;
+}
+
+.content {
+  /*padding: 10px;*/
+}
+
+/* CSS declarations go here */
