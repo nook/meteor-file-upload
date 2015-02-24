@@ -39,24 +39,23 @@ if (Meteor.isClient) {
 
   Meteor.startup(function() {
 
-    // This assigns a file upload drop zone to some DOM node
+    // enable assign action to a DOM
     myFiles.resumable.assignDrop($(".fileDrop"));
 
-    // This assigns a browse action to a DOM node
+    //enable browse action to a DOM
     myFiles.resumable.assignBrowse($(".fileBrowse"));
 
-    // When a file is added via drag and drop
+    // listen to the fileAdded dom node
     myFiles.resumable.on('fileAdded', function (file) {
       Session.set(file.uniqueIdentifier, 0);
-      // Create a new file in the file collection to upload
+      // new file is added to collection
       myFiles.insert({
-          _id: file.uniqueIdentifier,  // This is the ID resumable will use
+          _id: file.uniqueIdentifier,  //
           filename: file.fileName,
           contentType: file.file.type
         },
-        function (err, _id) {  // Callback to .insert
+        function (err, _id) {
           if (err) { return console.error("File creation failed!", err); }
-          // Once the file exists on the server, start uploading
           myFiles.resumable.upload();
         }
       );
@@ -115,7 +114,7 @@ if (Meteor.isClient) {
     uploadStatus: function(){
       percent = Session.get(this._id._str);
       if(percent){
-       ' processing....'
+       'processing....'
       }else{
         'uploading.....'
       }
@@ -123,7 +122,6 @@ if (Meteor.isClient) {
 
     formattedLength: function() {
      return numeral(this.length).format('0.0b');
-
     }
   });
 }

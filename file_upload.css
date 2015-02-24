@@ -1,10 +1,10 @@
 /* CSS declarations go here */
 
 body {
-  background: url('pattern_130.gif');
+  background: url('blue_dark.jpg');
 }
 
-.panel {
+.table {
   width: 100%;
   position: relative;
   background: #fff;
@@ -14,6 +14,7 @@ body {
 
 h3{
   text-align: center;
+  color: #ffffff;
 }
 
 .content {

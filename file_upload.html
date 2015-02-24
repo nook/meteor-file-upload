@@ -12,26 +12,15 @@
 </body>
 
 <template name="collTest">
-  <!--<div class="container panel">-->
     <h3>Bulk File upload</h3>
-    <!--{{#if currentUser}}-->
-      <!--<span class="pull-right"><b>UserId:</b> <span class="text-info">{{userId}}</span>-->
-      <!--<b>Token:</b> <span class="text-info">{{loginToken}}</span></span>-->
-    <!--{{/if}}-->
-    <!--&lt;!&ndash;<div class="loginTemp">&ndash;&gt;-->
-      <!--&lt;!&ndash;{{> loginButtons align="right"}}&ndash;&gt;-->
-    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-  <!--</div>-->
-  <div class="container panel fileDrop">
+  <div class="container fileDrop">
     <table class="table table-bordered table-striped">
       <thead>
       <tr>
         <th>Name</th>
         <th>ID</th>
-        <th>Owner</th>
         <th>Size</th>
         <th>Type</th>
-        <th>Checksum</th>
         <th>Preview</th>
       </tr>
       </thead>
@@ -43,13 +32,6 @@
           <button type="button" class="close del-file" aria-hidden="true">&times;</button>
         </td>
         <td>{{id}}</td>
-        <td>
-          {{#if owner}}
-          {{owner}}
-          {{else}}
-          <span class="text-muted">No owner</span>
-          {{/if}}
-        </td>
         <td>
           {{#if length}}
           {{formattedLength}}
@@ -63,7 +45,6 @@
           {{/if}}
         </td>
         <td>{{contentType}}</td>
-        <td>{{md5}}</td>
         <td>
           {{#if isImage}}
           <a href="{{link}}"><img class="img-thumbnail" alt="[ preview of {{shortFilename 16}} will display here ]" src="{{link}}" width="150"></a>
@@ -74,7 +55,7 @@
       </tr>
       {{else}}
       <tr><td colspan="20" align=center>
-        <span class="text-info fileBrowse">No files in collection, drag one here to upload</span>
+        <span class="text-info fileBrowse">No files in collection, drag or browse here to upload</span>
       </td></tr>
       {{/each}}
       </tbody>
